@@ -1,6 +1,9 @@
 ---
 // Welcome to Astro! Everything between these triple-dash code fences
 // is your "component frontmatter". It never runs in the browser.
+import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.astro';
+import '../styles/global.css';
 console.log('This runs in your terminal, not the browser!');
 const pageTitle = "About Us";
 const identity = {
@@ -16,6 +19,10 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Python", "Django"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "dodgerblue";
+const fontWeight = 'bold';
+const textCase = 'uppercase';
 ---
 <!-- Below is your "component template." It's just HTML, but with
     some magic sprinkled in to help you build great templates. -->
@@ -26,9 +33,7 @@ const goal = 3;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">home</a>
-    <a href="/about/">about</a>
-    <a href="/blog/">blog</a>
+    <Navigation />
     <h1>We are Open Umbrella Studios, {pageTitle}</h1>
     <p>We are a multi disciplined team of developers and designers interested in building the internet of the future. One with sustainablility and functionality top of mind.</p>
     <p>Here are some facts about our one current employee:</p>
@@ -41,15 +46,23 @@ const goal = 3;
     </ul>
     <p>His skills are:</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
     {happy && <p>He is happy to work as a developer</p>}
     {finished && <p>He finished this website</p>}
     {goal === 3 ? <p>My goal is to have this site done in 3 days.</p> : <p>My goal is to have this website done in {goal} days.</p>}
+    <Footer />
   </body>
 </html>
-<style>
+<style define:vars={{skillColor, fontWeight, textCase}}>
   h1 {
-    color: mediumorchid;
+    color: rebeccapurple;
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
   }
 </style>
