@@ -2,7 +2,7 @@
 // Welcome to Astro! Everything between these triple-dash code fences
 // is your "component frontmatter". It never runs in the browser.
 import Footer from '../components/Footer.astro';
-import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import '../styles/global.css';
 console.log('This runs in your terminal, not the browser!');
 const pageTitle = "About Us";
@@ -33,7 +33,7 @@ const textCase = 'uppercase';
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Navigation />
+    <Header />
     <h1>We are Open Umbrella Studios, {pageTitle}</h1>
     <p>We are a multi disciplined team of developers and designers interested in building the internet of the future. One with sustainablility and functionality top of mind.</p>
     <p>Here are some facts about our one current employee:</p>
