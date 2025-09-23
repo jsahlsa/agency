@@ -1,10 +1,8 @@
 ---
 // Welcome to Astro! Everything between these triple-dash code fences
 // is your "component frontmatter". It never runs in the browser.
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import '../styles/global.css';
-console.log('This runs in your terminal, not the browser!');
+import BaseLayout from "../layouts/BaseLayout.astro";
+console.log("This runs in your terminal, not the browser!");
 const pageTitle = "About Us";
 const identity = {
   firstName: "Joe",
@@ -21,40 +19,49 @@ const finished = false;
 const goal = 3;
 
 const skillColor = "dodgerblue";
-const fontWeight = 'bold';
-const textCase = 'uppercase';
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
+
 <!-- Below is your "component template." It's just HTML, but with
     some magic sprinkled in to help you build great templates. -->
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-    <h1>We are Open Umbrella Studios, {pageTitle}</h1>
-    <p>We are a multi disciplined team of developers and designers interested in building the internet of the future. One with sustainablility and functionality top of mind.</p>
-    <p>Here are some facts about our one current employee:</p>
-    <ul>
-      <li>His name is {identity.firstName}.</li>
-      <li>He lives in {identity.state} and works as a {identity.occupation}.</li>
-      {identity.hobbies.length >= 2 &&
-      <li>Two of his hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-      }
-    </ul>
-    <p>His skills are:</p>
-    <ul>
-      {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-    {happy && <p>He is happy to work as a developer</p>}
-    {finished && <p>He finished this website</p>}
-    {goal === 3 ? <p>My goal is to have this site done in 3 days.</p> : <p>My goal is to have this website done in {goal} days.</p>}
-    <Footer />
-  </body>
-</html>
-<style define:vars={{skillColor, fontWeight, textCase}}>
+<BaseLayout pageTitle={pageTitle}>
+  <h1>We are Open Umbrella Studios</h1>
+  <p>
+    We are a multi disciplined team of developers and designers interested in
+    building the internet of the future. One with sustainablility and
+    functionality top of mind.
+  </p>
+  <p>Here are some facts about our one current employee:</p>
+  <ul>
+    <li>His name is {identity.firstName}.</li>
+    <li>
+      He lives in {identity.state} and works as a {identity.occupation}.
+    </li>
+    {
+      identity.hobbies.length >= 2 && (
+        <li>
+          Two of his hobbies are: {identity.hobbies[0]} and{" "}
+          {identity.hobbies[1]}
+        </li>
+      )
+    }
+  </ul>
+  <p>His skills are:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
+  {happy && <p>He is happy to work as a developer</p>}
+  {finished && <p>He finished this website</p>}
+  {
+    goal === 3 ? (
+      <p>My goal is to have this site done in 3 days.</p>
+    ) : (
+      <p>My goal is to have this website done in {goal} days.</p>
+    )
+  }
+</BaseLayout>
+<style is:global define:vars={{ skillColor, fontWeight, textCase }}>
   h1 {
     color: rebeccapurple;
     font-size: 4rem;

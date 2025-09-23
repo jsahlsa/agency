@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: "An uninformative blog post"
 pubDate: 2025-09-21
 description: "You probably won't learn anything from this post"
@@ -10,8 +11,6 @@ tags: ["astro", "blogging", "dumb"]
 ---
 
 # A useless blog post
-
-Published on: 2025-09-21
 
 Welcome to our _blog_. We hope to illuminate the craft of web development for the modern age without needless complexity and resources.
 

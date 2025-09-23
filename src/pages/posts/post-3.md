@@ -1,17 +1,16 @@
 ---
-title: "An uninformative blog post"
+layout: ../../layouts/MarkdownPostLayout.astro
+title: "An uninformative blog post (3rd in the series)"
 pubDate: 2025-09-21
 description: "You probably won't learn anything from this post"
 author: "Joe Sahlsa"
 image:
   url: "https://docs.astro.build/assets/rose.webp"
   alt: "The Astro logo on a dark background with a pink glow."
-tags: ["astro", "blogging", "dumb"]
+tags: ["astro", "blogging", "dumb", "python", "c", "kotlin", "rust"]
 ---
 
 # A useless blog post
-
-Published on: 2025-09-21
 
 Welcome to our _blog_. We hope to illuminate the craft of web development for the modern age without needless complexity and resources.
 

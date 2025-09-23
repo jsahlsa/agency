@@ -1,28 +1,12 @@
 ---
 // Welcome to Astro! Everything between these triple-dash code fences
 // is your "component frontmatter". It never runs in the browser.
-console.log('This runs in your terminal, not the browser!');
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import "../styles/global.css";
-const pageTitle = 'Open Umbrella Landing Page';
+console.log("This runs in your terminal, not the browser!");
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Open Umbrella Landing Page";
 ---
-<!-- Below is your "component template." It's just HTML, but with
-    some magic sprinkled in to help you build great templates. -->
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-    <h1>Hello, Open Umbrella maybe?!</h1>
-    <Footer />
-  </body>
-</html>
-<style>
-  h1 {
-    color: mediumorchid;
-  }
-</style>
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>Open Umbrella Landing Page</h1>
+  <h2>My awesome blog subtitle</h2>
+</BaseLayout>
